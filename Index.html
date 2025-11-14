@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nusantara Blend — Kopi untuk Gen Z</title>
+  <meta name="description" content="Nusantara Blend — Kopi Nusantara dengan gaya modern untuk Gen Z. Landing page responsive dengan TailwindCSS." />
+  <!-- Tailwind CDN (Play CDN for quick prototype) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom utilities for small accents */
+    .neon-button {
+      box-shadow: 0 6px 18px rgba(198,255,0,0.14), inset 0 -6px 18px rgba(255,122,41,0.06);
+    }
+    .glow {
+      text-shadow: 0 2px 8px rgba(198,255,0,0.12), 0 1px 0 rgba(255,122,41,0.06);
+    }
+    .card-hover:hover { transform: translateY(-6px) scale(1.01); }
+    /* avoid fixed background on mobile for performance */
+    .parallax { background-size: cover; }
+    @media (min-width: 1024px) { .parallax { background-attachment: fixed; } }
+  </style>
+</head>
+<body class="antialiased bg-[#0f0f10] text-gray-100 leading-relaxed">
+  <!-- Container -->
+  <header class="bg-gradient-to-r from-[#0f0f10] via-[#1a1a1a] to-[#111827] sticky top-0 z-50 border-b border-gray-800">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#A0522D] to-[#C6FF00] flex items-center justify-center text-black font-extrabold">NB</div>
+        <div>
+          <h1 class="text-lg font-semibold">Nusantara Blend</h1>
+          <p class="text-xs text-gray-400 -mt-1">Kopi Nusantara — Energi Gen Z</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#varian" class="hover:underline">Varian</a>
+        <a href="#story" class="hover:underline">Cerita</a>
+        <a href="#reviews" class="hover:underline">Review</a>
+        <a href="#shop" class="hover:underline">Shop</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button class="hidden md:inline-block px-4 py-2 rounded-md border border-gray-700 text-sm">Login</button>
+        <button class="neon-button inline-block px-4 py-2 rounded-md bg-gradient-to-r from-[#C6FF00] to-[#FF7A29] text-black font-semibold">Coba Sekarang</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="space-y-6">
+        <p class="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[#1b1b1b] text-[#C6FF00]">Limited Roast • Fresh Weekly</p>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">Kopi Nusantara Blend — <span class="glow text-[#C6FF00]">Bikin Hari Kamu Nge-Flow</span></h2>
+        <p class="text-gray-300 max-w-xl">Racikan biji kopi premium dari Gayo, Sumatera, dan Kintamani. Aromatik, bold, dan cocok buat produktif — dikemas aesthetic, siap jadi teman kreatifmu.</p>
+
+        <div class="flex gap-3 items-center">
+          <a href="#shop" class="neon-button inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-semibold">🛒 Coba Sekarang</a>
+          <a href="#varian" class="inline-flex items-center gap-2 px-4 py-3 rounded-full border border-gray-700 text-sm">Lihat Varian</a>
+        </div>
+
+        <div class="flex items-center gap-4 mt-6">
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-full bg-[#A0522D] flex items-center justify-center font-bold">☕</div>
+            <div>
+              <p class="text-sm font-semibold">100% Fresh Roasted</p>
+              <p class="text-xs text-gray-400">Setiap minggu langsung panggang</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-full bg-[#FF7A29] flex items-center justify-center font-bold">🌱</div>
+            <div>
+              <p class="text-sm font-semibold">Sustainable</p>
+              <p class="text-xs text-gray-400">Dukungan petani lokal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3b7e2b9a5d02b4b7f8d1b8c1d0b6bd8c" alt="Cup kopi" class="w-full h-96 object-cover brightness-90" />
+          <div class="absolute bottom-6 left-6 bg-gradient-to-r from-black/40 to-transparent p-4 rounded-xl">
+            <h3 class="font-bold text-white">Nusantara Blend — Fresh Roast</h3>
+            <p class="text-xs text-gray-300">Limited batch tiap minggu</p>
+          </div>
+        </div>
+
+        <!-- Floating sticker -->
+        <div class="absolute -right-6 -top-6 rotate-6 bg-gradient-to-br from-[#C6FF00] to-[#FF7A29] text-black px-4 py-2 rounded-2xl font-semibold shadow-xl">New Drop</div>
+      </div>
+    </div>
+
+    <!-- subtle decorative wave -->
+    <svg class="w-full" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg"><path fill="#0f0f10" d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z"></path></svg>
+  </section>
+
+  <!-- VALUE PROPS -->
+  <section id="varian" class="max-w-6xl mx-auto px-6 py-16">
+    <h3 class="text-2xl font-bold">Kenapa Pilih Nusantara Blend?</h3>
+    <p class="text-gray-400 mt-2 max-w-2xl">Perpaduan cita rasa Nusantara, kualitas barista, dan packaging aesthetic — dirancang buat gaya hidup Gen Z.</p>
+
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-[#0b0b0b] p-6 rounded-2xl border border-gray-800 card-hover transform transition-shadow duration-300">
+        <div class="text-3xl font-bold">☕</div>
+        <h4 class="mt-4 font-semibold">Blend Khas Nusantara</h4>
+        <p class="text-gray-400 text-sm mt-2">Karakter bold, aromatic, cocok dinikmati kapanpun.</p>
+      </div>
+
+      <div class="bg-[#0b0b0b] p-6 rounded-2xl border border-gray-800 card-hover">
+        <div class="text-3xl font-bold">⚡</div>
+        <h4 class="mt-4 font-semibold">Energi untuk Aktivitas</h4>
+        <p class="text-gray-400 text-sm mt-2">Mood booster buat kerja, study, dan content creation.</p>
+      </div>
+
+      <div class="bg-[#0b0b0b] p-6 rounded-2xl border border-gray-800 card-hover">
+        <div class="text-3xl font-bold">🌱</div>
+        <h4 class="mt-4 font-semibold">Sustainable</h4>
+        <p class="text-gray-400 text-sm mt-2">Kemitraan dengan petani lokal, praktek berkelanjutan.</p>
+      </div>
+
+      <div class="bg-[#0b0b0b] p-6 rounded-2xl border border-gray-800 card-hover">
+        <div class="text-3xl font-bold">🎨</div>
+        <h4 class="mt-4 font-semibold">Packaging Aesthetic</h4>
+        <p class="text-gray-400 text-sm mt-2">Design yang cocok dipajang di meja dan feed Instagram.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID / SHOP -->
+  <section id="shop" class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class="text-2xl font-bold">Varian Populer</h3>
+        <p class="text-gray-400">Pilih varian sesuai mood mu.</p>
+      </div>
+      <div class="hidden md:flex gap-3 items-center">
+        <button class="px-3 py-2 rounded-md border border-gray-700 text-sm">Filter</button>
+        <button class="px-3 py-2 rounded-md border border-gray-700 text-sm">Sort: Terpopuler</button>
+      </div>
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <article class="bg-[#0b0b0b] rounded-2xl p-4 border border-gray-800 transform transition duration-300 hover:scale-105">
+        <img src="https://kopibara.id/wp-content/uploads/2020/08/Arabica-Sumatra-Sidikalang-200gr-Roasted-Coffee-Bean-Kopi-Bara-Signature-1.jpg" alt="Sumatra Bold" class="w-full h-44 object-cover rounded-xl"/>
+        <div class="mt-3">
+          <h4 class="font-semibold">Arabica Sumatra Sidikalang 200 gr</h4>
+          <p class="text-xs text-gray-400 mt-1">Dark, spicy, penuh body — untuk yang suka nendang.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">Rp 62.000</div>
+            <button class="px-3 py-1 rounded-full text-sm bg-[#A0522D] hover:brightness-95">Tambah</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="bg-[#0b0b0b] rounded-2xl p-4 border border-gray-800 transform transition duration-300 hover:scale-105">
+        <img src="https://kopibara.id/wp-content/uploads/2020/08/Arabica-Java-Arjuna-200gr-Roasted-Coffee-Bean-Kopi-Bara-Signature-1.jpg" alt="Java Comfort" class="w-full h-44 object-cover rounded-xl"/>
+        <div class="mt-3">
+          <h4 class="font-semibold">Arabica Java Arjuna 200 gr</h4>
+          <p class="text-xs text-gray-400 mt-1">Nutty & smooth — versi yang mudah disukai.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">Rp 62.000</div>
+            <button class="px-3 py-1 rounded-full text-sm bg-[#C6FF00] text-black">Tambah</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="bg-[#0b0b0b] rounded-2xl p-4 border border-gray-800 transform transition duration-300 hover:scale-105">
+        <img src="https://kopibara.id/wp-content/uploads/2020/08/Arabica-Bali-Kintamani-200-gr-Roasted-Coffee-Bean-Kopi-Bara-Signature-1.jpg" alt="Bali Citrus" class="w-full h-44 object-cover rounded-xl"/>
+        <div class="mt-3">
+          <h4 class="font-semibold">Robusta Bali Kintamani 200 gr</h4>
+          <p class="text-xs text-gray-400 mt-1">Fruity & bright — cocok untuk yang suka ringan.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">Rp 62.000</div>
+            <button class="px-3 py-1 rounded-full text-sm bg-[#FF7A29] text-black">Tambah</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="bg-[#0b0b0b] rounded-2xl p-4 border border-gray-800 transform transition duration-300 hover:scale-105">
+        <img src="https://kopibara.id/wp-content/uploads/2020/08/Arabica-Toraja-Sapan-200gr-Roasted-Coffee-Bean-Kopi-Bara-Signature-1-1.jpg" alt="Toraja Heritage" class="w-full h-44 object-cover rounded-xl"/>
+        <div class="mt-3">
+          <h4 class="font-semibold">Arabica Toraja Sapan 200 gr</h4>
+          <p class="text-xs text-gray-400 mt-1">Deep & clean — klasik Nusantara.</p>
+          <div class="mt-3 flex items-center justify-between">
+            <div class="font-bold">Rp 62.000</div>
+            <button class="px-3 py-1 rounded-full text-sm bg-[#A0522D]">Tambah</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- STORY / ABOUT -->
+  <section id="story" class="bg-gradient-to-b from-[#080808] to-[#0f0f10] py-16">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h3 class="text-2xl font-bold">Cerita Kopi Kita</h3>
+        <p class="text-gray-400 mt-3">Kami percaya kopi Nusantara bukan hanya minuman: ini identitas. Kami bekerja langsung dengan petani Gayo, Temanggung, dan Kintamani untuk mendapatkan biji berkualitas—lalu memanggangnya secara hati-hati agar karakter rasa tetap hidup.</p>
+
+        <ul class="mt-6 space-y-3 text-sm text-gray-300">
+          <li>• Direct trade & support untuk petani</li>
+          <li>• Roast small batch, fresh weekly</li>
+          <li>• Kemasan aesthetic yang ramah konten</li>
+        </ul>
+
+        <div class="mt-6">
+          <a href="#shop" class="inline-block px-5 py-3 rounded-full bg-[#C6FF00] text-black font-semibold">Belanja Sekarang</a>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow-inner">
+        <img src="https://mediaetam.com/wp-content/uploads/2023/01/petani-kopi_169.jpeg" alt="farmers" class="w-full h-80 object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="max-w-6xl mx-auto px-6 py-16">
+    <h3 class="text-2xl font-bold">Apa Kata Mereka</h3>
+    <p class="text-gray-400 mt-2">Review singkat dari Gen Z yang sudah coba.</p>
+
+    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <blockquote class="bg-[#0b0b0b] p-6 rounded-2xl border border-gray-800">
+        <p class="text-gray-200">“Packagingnya aesthetic parah! Rasanya juga nendang. Worth it!”</p>
+        <footer class="mt-4 text-gray-400 text-sm">— Naira, 20</footer>
+      </blockquote>
+
+      <blockquote class="bg-[#0b0b0b] p-6 rounded-2xl border border-gray-800">
+        <p class="text-gray-200">“Cocok buat malam lembur. Aromanya khas banget.”</p>
+        <footer class="mt-4 text-gray-400 text-sm">— Rafi, 19</footer>
+      </blockquote>
+
+      <blockquote class="bg-[#0b0b0b] p-6 rounded-2xl border border-gray-800">
+        <p class="text-gray-200">“Banyak pilihan varian & selalu fresh. Jadi langganan sekarang!”</p>
+        <footer class="mt-4 text-gray-400 text-sm">— Clara, 22</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-6 rounded-3xl p-10" style="background: linear-gradient(90deg, rgba(198,255,0,0.06), rgba(255,122,41,0.04));">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl font-bold">Siap Upgrade Hari Kamu?</h3>
+          <p class="text-gray-400 mt-1">Dapatkan batch terbatas minggu ini — stok terbatas!</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="#shop" class="px-6 py-3 rounded-full bg-gradient-to-r from-[#C6FF00] to-[#FF7A29] text-black font-semibold">Checkout Sekarang</a>
+          <a href="#" class="px-6 py-3 rounded-full border border-gray-700">Subscribe</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800 py-8">
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h4 class="font-bold">Nusantara Blend</h4>
+        <p class="text-gray-400 text-sm mt-2">Kopi Nusantara untuk generasi kreatif. Fresh roast • Direct trade • Packaging aesthetic</p>
+      </div>
+
+      <div>
+        <h5 class="font-semibold">Menu</h5>
+        <ul class="mt-3 text-sm text-gray-400 space-y-2">
+          <li><a href="#varian" class="hover:underline">Varian</a></li>
+          <li><a href="#story" class="hover:underline">Cerita</a></li>
+          <li><a href="#reviews" class="hover:underline">Review</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="font-semibold">Ikuti Kami</h5>
+        <div class="flex gap-3 mt-3">
+          <a href="#" class="px-3 py-2 rounded-md bg-[#111] border border-gray-800">TikTok</a>
+          <a href="#" class="px-3 py-2 rounded-md bg-[#111] border border-gray-800">Instagram</a>
+          <a href="#" class="px-3 py-2 rounded-md bg-[#111] border border-gray-800">YouTube</a>
+        </div>
+
+        <div class="mt-4">
+          <label class="text-sm text-gray-400">Newsletter</label>
+          <div class="mt-2 flex gap-2">
+            <input type="email" placeholder="email@example.com" class="w-full rounded-md bg-[#0b0b0b] border border-gray-800 px-3 py-2 text-sm" />
+            <button class="px-4 py-2 rounded-md bg-[#C6FF00] text-black font-semibold">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 mt-6 text-gray-500 text-sm">© 2025 Nusantara Blend. All rights reserved.</div>
+  </footer>
+
+  <!-- Minimal JS for interactivity (no frameworks) -->
+  <script>
+    // Simple sticky nav shadow
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) header.classList.add('shadow-lg'); else header.classList.remove('shadow-lg');
+    });
+
+    // Mobile nav (optional) - if you plan to add a menu button
+
+    // Simple add-to-cart visual (no backend)
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if(btn.textContent.trim().toLowerCase().includes('tambah') || btn.textContent.trim().toLowerCase().includes('coba')) {
+          btn.classList.add('scale-95');
+          setTimeout(() => btn.classList.remove('scale-95'), 120);
+        }
+      });
+    });
+  </script>
+  <!-- CHATBOT WIDGET -->
+  <div id="chatbot" class="fixed bottom-20 right-6 w-80 bg-[#0b0b0b] border border-gray-800 rounded-2xl shadow-2xl hidden flex-col overflow-hidden">
+    <div class="bg-gradient-to-r from-[#C6FF00] to-[#FF7A29] text-black px-4 py-3 font-bold">Nusantara ChatBot</div>
+    <div id="chatbotMessages" class="p-4 h-64 overflow-y-auto text-sm space-y-2 text-gray-200"></div>
+    <div class="p-3 bg-[#111] flex gap-2">
+      <input id="chatbotInput" type="text" placeholder="Tanya apa saja..." class="flex-1 px-3 py-2 rounded-md bg-[#0b0b0b] border border-gray-800 text-sm" />
+      <button id="chatbotSend" class="px-4 py-2 bg-[#C6FF00] text-black rounded-md font-bold">Kirim</button>
+    </div>
+  </div>
+
+  <!-- Chatbot Toggle Button -->
+  <button id="chatbotToggle" class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-br from-[#C6FF00] to-[#FF7A29] text-black shadow-xl flex items-center justify-center text-2xl">💬</button>
+
+  <script>
+    const toggle = document.getElementById('chatbotToggle');
+    const bot = document.getElementById('chatbot');
+    const send = document.getElementById('chatbotSend');
+    const input = document.getElementById('chatbotInput');
+    const messages = document.getElementById('chatbotMessages');
+
+    toggle.onclick = () => bot.classList.toggle('hidden');
+
+    send.onclick = () => {
+      const text = input.value.trim();
+      if(!text) return;
+
+      messages.innerHTML += `<div class='text-right'><span class='inline-block bg-[#C6FF00] text-black px-3 py-1 rounded-md mb-1'>${text}</span></div>`;
+      input.value = '';
+
+      setTimeout(() => {
+        messages.innerHTML += `<div><span class='inline-block bg-[#222] px-3 py-1 rounded-md mb-1'>Saya bot Nusantara ☕<br/>Pertanyaan kamu: ${text}</span></div>`;
+        messages.scrollTop = messages.scrollHeight;
+      }, 500);
+    };
+  </script>
+
+</body>
+</html>
